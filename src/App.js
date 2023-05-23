@@ -42,7 +42,16 @@ return (
     })}
     {toDos.map((obj)=>{
       if(obj.status){
-        return (<h1>{obj.text}</h1>)
+        return (
+
+
+          <div>
+               <h1>{obj.text}</h1>
+          <h1>{Date(obj.id)}</h1>
+          </div>
+       
+        
+        )
       }
       return null
     })}
