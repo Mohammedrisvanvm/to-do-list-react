@@ -7,16 +7,16 @@ function App() {
   const deleteHandler=(id)=>{
 
      setToDos(toDos.filter(el=>el.id !== id ))
-   
-  }
+    }
+const date =new Date()
   return (
     <div className="app">
-      <div className="mainHeading">
+      <div className="mainHeading"> 
         <h1>ToDo List</h1>
       </div>
       <div className="subHeading">
         <br />
-        <h2>Whoop, it's Wednesday 🌝 ☕ </h2>
+        <h2>Whoop, it's {date.toDateString()} 🌝 ☕ </h2>
       </div>
       <div className="input">
         <input
