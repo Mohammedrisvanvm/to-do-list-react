@@ -2,9 +2,9 @@ import React from 'react'
 
 function Header() {
   return (
-    <div>
-      To Do List
-    </div>
+    <header>
+        <h1>Todo List</h1>
+      </header>
   )
 }
 
