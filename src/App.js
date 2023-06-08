@@ -5,10 +5,18 @@ function App() {
   const [toDos, setToDos] = useState([]);
   const [toDo, setToDo] = useState("");
   const deleteHandler=(id)=>{
-
+    
      setToDos(toDos.filter(el=>el.id !== id ))
-    }
-const date =new Date()
+
+    
+  }
+  const completedToDo=(id)=>{
+  
+ 
+  }
+  const date =new Date()
+
+
   return (
     <div className="app">
       <div className="mainHeading"> 
@@ -26,8 +34,11 @@ const date =new Date()
           placeholder="🖊️ Add item..."
         />
         <i
-          onClick={() =>
-            setToDos([...toDos, { id: Date.now(), text: toDo, status: false }])
+          onClick={() =>{
+
+            setToDos([...toDos, { id: Date.now(), text: toDo, status: false, completed:false }])
+
+          }
           }
           className="fas fa-plus"
         ></i>
@@ -56,7 +67,7 @@ const date =new Date()
                 <p>{value.text}</p>
               </div>
               <div className="right">
-                <i className="fa-sharp fa-solid fa-circle-check fa-primary"></i>
+                <i onClick={()=>completedToDo(value.id)} className="fa-sharp fa-solid fa-circle-check fa-primary"></i>
                 <i onClick={()=>deleteHandler(value.id)} className="fas fa-trash ms-3"></i>
               </div>
             </div>
